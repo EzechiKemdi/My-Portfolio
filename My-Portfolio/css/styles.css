@@ -1,0 +1,1057 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Source+Code+Pro:wght@300&family=Victor+Mono:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/*:root{
+    --bg-color: #223039; 
+    --second-bg-color: #79A7D3; 2ec59a
+    --text-color: #ededed;
+    --main-color: #6883BC;
+}
+*/
+:root{
+    --bg-color: #ffffff;
+    --second-bg-color: #e8b9ad; 
+    --text-color: #130e0e;
+    --main-color: #FF3D33; 
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;
+}
+.header.sticky {
+    background: var(--bg-color);
+}
+
+.logo{
+    position: relative;
+    font-size: 2.2rem;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: .3s;
+}
+
+.navbar {
+    position: relative;
+}
+
+.navbar a{
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-weight: 450;
+    margin-left: 3.5rem;
+    transition: .3s;
+}
+.navbar a:hover {
+    color: var(--main-color);
+    font-size: 1.6rem;
+}
+
+.navbar a.active {
+    color: var(--main-color); 
+}
+
+#menu-icon{
+    position: relative;
+    font-size: 3.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+/*HOME PAGE DESIGN*/
+.home {
+    display: flex;
+    align-items: center;
+    padding: 0 9%;
+/*BIG IMAGE*/
+background: url(../images/programmer.png) no-repeat;
+background-size: contain;
+    background-position: right;
+    /*background: url(https://i.gifer.com/5eKX.gif) no-repeat;
+    background-size: 55rem;
+    background-position: 85rem;*/
+}
+
+
+.home-content{
+    max-width: 60rem;
+    z-index: 99;
+}
+
+.home-content h1{
+    position: relative;
+    display: inline-block;
+    font-size:  5.6rem;
+    font-weight: 700;
+    line-height: 2;
+}
+
+.home-content .text-animation{
+    position: relative;
+    width: 32.8rem;
+}
+
+.home-content .text-animation h3 {
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: .7px var(--main-color);
+    background-image: linear-gradient(var(--main-color), var(--main-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -33rem 0;
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 2s;
+}
+.home.show-animate .home-content .text-animation h3 {
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 2s;
+}
+
+
+
+.home-content .text-animation h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 2px solid var(--main-color);
+    z-index: -1;
+    animation: homeCursorText 6s linear infinite;
+    animation-delay: 2s;
+}
+
+.home.show-animate .home-content .text-animation h3::before {
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 2s;
+}
+
+
+.home-content p{
+    position: relative;
+    font-size: 1.6rem;
+    margin: 2rem 0 4rem;
+    line-height: 1.4;
+}
+
+.btn-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 34.5rem;
+    height: 5rem;
+
+}
+
+.btn-box .btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 100%;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .8rem;
+    font-size: 1.8rem;
+    font-weight: 620;
+    letter-spacing: .4rem;
+    color: var(--bg-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.btn-box .btn:hover{
+    color: var(--main-color);
+}
+
+.btn-box .btn:nth-child(2){
+    background: transparent;
+    color: var(--main-color);
+}
+
+.btn-box .btn:nth-child(2):hover{
+    color: var(--bg-color);
+}
+
+.btn-box .btn:nth-child(2)::before{
+    background: var(--main-color);
+}
+
+
+
+.btn-box .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box .btn:hover::before {
+    width: 100%;
+}
+
+
+.home-apps {
+    position: absolute;
+    bottom: 4rem;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-apps a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 24px;
+    color: var(--main-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+    
+}
+.home-apps a:hover {
+    color: var(--bg-color);
+}
+
+.home-apps a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--main-color);
+    z-index: -1;
+    transition: .5s;
+}
+.home-apps a:hover::before {
+    width: 100%;
+}
+
+.home-imgHover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transition: 1.5s;
+}
+
+.home-imgHover:hover {
+    background: var(--bg-color);
+    opacity: .6;
+}
+
+
+/*ABOUT ME PAGE*/
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--second-bg-color);
+    padding-bottom: 6rem;
+}
+
+.heading{
+    position: relative;
+    font-size: 4rem;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+span{
+    color: var(--main-color);
+}
+
+.about-img{
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img img{
+    width: 110%;
+    height: 110%;
+    border-radius: 50%;
+    border: .4rem solid var(--main-color);
+}
+
+.about-img .circle-spinner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 127%;
+    height: 127%;
+    border-radius: 50%;
+    border-top: .2rem solid var(--second-bg-color);
+    border-bottom: .2rem solid var(--second-bg-color);
+    border-left: .2rem solid var(--main-color);
+    border-right: .2rem solid var(--main-color);
+    animation: aboutSpin 4.5s linear infinite;
+}
+
+.about-content{
+    text-align: center;
+}
+.about-content h3{
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    margin-top: 3.7rem;
+}
+.about-content p{
+    position: relative;
+    font-size: 1.5rem;
+    margin: 2rem 0 3rem;
+}
+
+.btn-box.btns{
+    display: inline-block;
+    width: 15rem;
+}
+.btn-box.btns a::before {
+    background-color: var(--second-bg-color);
+}
+
+/*Education section. This section contains both skills and deucation on the same page. */
+
+.education {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 5rem;
+}
+
+.education .education-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.education-row .education-column {
+    flex: 1 1 40rem;
+}
+
+.education-column .title {
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 2rem;
+    text-align: left;
+}
+
+.education-column .education-box {
+    position: relative;
+    border-left: .2rem solid var(--main-color);
+}
+.education-box .education-content {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.education-box .education-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1.1rem;
+    width: 2rem;
+    height: 2rem;
+    background: var(--main-color);
+    border-radius: 50%;
+
+}
+
+
+.education-content .content {
+    position: relative;
+    padding: 1.7rem;
+    border: .2rem solid var(--main-color);
+    border-radius: .8rem;
+    margin-bottom: 2rem;
+    margin-right: 50%;
+    overflow: hidden;
+}
+
+
+.education-content .content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #9dcfb2;
+    border-radius: .8rem;
+    z-index: -1;
+    transition: .6s;
+}
+.education-content .content:hover::before {
+    width: 100%;
+}
+
+
+
+.education-content .content .year {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.education-content .content .year i {
+    padding-right: 1rem;
+}
+
+.education-content .content h3 {
+    font-size: 1.7rem;
+}
+.education-content .content p {
+    font-size: 1.4rem;
+    padding-top: .5rem;
+}
+
+/*My Skills section. This section contains both skills and education on the same page. */
+
+.skills {
+    min-height: auto;
+    padding-bottom: 8rem;
+    background: var(--second-bg-color);
+}
+
+.skills h2 {
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.skills .skills-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.skills-row .skills-column {
+    flex: 1 1 40rem;
+}
+
+.skills-column .title {
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 2rem;
+    
+}
+
+.skills-column .skills-box {
+    position: relative;
+}
+
+.skills-box .skills-content {
+    position: relative;
+    border: .2rem solid var(--main-color);
+    background: var(--bg-color);
+    border-radius: .6rem;
+    padding: .5rem 1.5rem;
+    z-index: 1;
+    overflow: hidden;
+}
+/*
+.skills-box .skills-content ::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    z-index: -1;
+    transition: .5s;
+      
+}
+.skills-box .skills-content :hover::before {
+    width: 100%;
+}
+*/
+
+
+.skills-box .progress {
+    padding: 1rem 0;
+}
+
+.skills-content .progress h3 {
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills-content .progress h3 span {
+    color: var(--text-color);
+}
+
+.skills-content .progress .progress-bar {
+    height: 2.5rem;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+    padding: .5rem;
+    margin: 1rem 0;
+    
+}
+
+.skills-content .progress .progress-bar span {
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: rgb(39, 150, 39);
+}
+
+/*Coding Skills*/
+.skills-column:nth-child(1) .skills-content .progress:nth-child(1) .progress-bar span {
+    width: 84%;
+    -webkit-transition: 3s all ;
+    -webkit-animation-duration: 4s;
+    animation: progress 5s ease-in infinite;
+}
+.skills-column:nth-child(1) .skills-content .progress:nth-child(2) .progress-bar span {
+    width: 77%;
+    -webkit-transition: 3s all ;
+    -webkit-animation-duration: 4s;
+    animation: progress2 5s ease-in infinite;
+}
+.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .progress-bar span {
+    width: 61%;
+    -webkit-transition: 3s all ;
+    -webkit-animation-duration: 4s;
+    animation: progress3 5s ease-in  infinite;
+}
+.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .progress-bar span {
+    width: 67%;
+    -webkit-transition: 3s all ;
+    -webkit-animation-duration: 4s;
+    animation: progress4 5s ease-in  infinite;
+}
+.skills-column:nth-child(1) .skills-content .progress:nth-child(5) .progress-bar span {
+    width: 53%;
+    -webkit-transition: 3s all ;
+    -webkit-animation-duration: 4s;
+    animation: progress5 5s ease-in infinite ;
+}
+
+
+
+
+
+/*Profession Skills*/
+.skills-column:nth-child(2) .skills-content .progress:nth-child(1) .progress-bar span {
+    width: 70%; 
+    -webkit-transition: 3s all ;
+    -webkit-animation-duration: 4s;
+    animation: progress6 5s ease-out infinite;
+}
+.skills-column:nth-child(2) .skills-content .progress:nth-child(2) .progress-bar span {
+    width: 88%;
+    -webkit-transition: 3s all ;
+    -webkit-animation-duration: 4s;
+    animation: progress7 5s ease-out infinite ;
+}
+.skills-column:nth-child(2) .skills-content .progress:nth-child(3) .progress-bar span {
+    width: 61%;
+    -webkit-transition: 3s all ;
+    -webkit-animation-duration: 4s;
+    animation: progress8 5s ease-out infinite ;
+}
+.skills-column:nth-child(2) .skills-content .progress:nth-child(4) .progress-bar span {
+    width: 72%;
+    -webkit-transition: 3s all ;
+    -webkit-animation-duration: 4s;
+    animation: progress9 5s ease-out infinite ;
+}
+
+
+
+/*Contact Design Section*/
+.contact-section {
+    min-height: auto;
+    padding-bottom: 7rem;
+    background: var(--bg-color);
+}
+
+
+.contact-section h2 {
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contact-section form {
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+.contact-section form .input-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-section form .input-box .input-field {
+    position: relative;
+    width: 49%;
+    margin: .8rem 0;
+}
+
+.contact-section form .input-box .input-field input,
+.contact-section form .textarea-field textarea {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .6rem ;
+    border: .2rem solid var(--main-color);
+}
+
+
+.contact-section form .input-box .input-field input::placeholder,
+.contact-section form .textarea-field textarea::placeholder {
+    color: var(--text-color);
+}
+
+.contact-section form .textarea-field {
+    position: relative;
+    margin: .8rem 0 2.7rem;
+    display: flex;
+}
+
+.contact-section form .textarea-field textarea {
+    resize: none;
+}
+
+.contact-section form .btn-box.btns .btn {
+    cursor: pointer;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
+}
+
+.footer-text p {
+    font-size: 1.4rem;
+}
+
+.footer-iconTop{
+    position: relative;
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .5rem;
+    border: .2rem solid var(--main-color);
+}
+
+.footer-iconTop a i {
+    font-size: 1.5rem;
+    color: var(--bg-color);
+}
+
+/*ANIMATION SCROLLING AND RELOAD*/
+.animate {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: 98;
+}
+
+.animate.home-img {
+    width: 50%;
+}
+
+.logo .animate,
+.navbar .animate, 
+#menu-icon .animate,
+.home.show-animate .animate {
+    animation: showRight 1s ease forwards;
+    animation-delay: calc(.3s * var(--i));
+}
+
+.animate.scroll {
+    transition: 1s ease-out;
+    transition-delay: calc(.3s / var(--i));
+    animation: none;
+}
+
+section:nth-child(odd) .animate.scroll {
+    background: var(--second-bg-color);
+}
+
+/*SECTION BELOW IS FOR THE POINTS OF THE EDUCATION BOXES.*/
+.education .education-box .animate.scroll {
+    width: 105%;
+}
+/*SECTION ABOVE IS FOR THE POINTS OF THE EDUCATION BOXES.*/
+
+.about.show-animate .animate.scroll, 
+.education.show-animate .animate.scroll,
+.education.show-animate .education-box .animate.scroll,
+.skills.show-animate .animate.scroll,
+.contact-section.show-animate .animate.scroll {
+    transition-delay: calc(.3s * var(--i));
+    width: 0;
+}
+
+
+/* Breaking points*/
+
+@media (max-width: 1200px){
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px){
+    .header {
+        padding:  2rem 5%;
+    }
+
+    section {
+        padding: 10rem 4% 2rem;
+    }
+    .home {
+        padding: 0 4%;
+    }
+
+    .footer {
+        padding: 2rem 4%;
+    }
+}
+
+@media (max-width: 850px){
+    .animate.home-img{
+        width: 55%;
+    }
+}
+
+@media (max-width: 768px){
+    .header {
+        background: var(--bg-color);
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--bg-color);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        z-index: 1;
+        transition: .25s ease-in-out;
+        transition-delay: .25s;
+    }
+
+    .navbar.active {
+        left: 0;
+        transition-delay: 0s;
+    }
+
+    .navbar .active-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #9dcfb2;
+        border-top: .1rem rgba(0, 0, 0, .2);
+        z-index: -1;
+        transition: .25s ease-in-out;
+        transition-delay: 0s;
+    }
+    .navbar.active .active-nav {
+        transition-delay: .25s;
+        left: 0;
+    }
+
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        transform: translateX(-20rem);
+        transition: .25s ease-in-out;
+        transition-delay: 0s;
+    }
+
+    .navbar.active a {
+        transform: translateX(0);
+        transition-delay: .25s;
+    }
+
+
+    .home-imgHover{
+        pointer-events: none;
+        background: var(--bg-color);
+        opacity: .7;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+    html {
+        font-size: 50%;
+    }
+
+    .home-content h1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-apps {
+        width: 160px;
+    }
+    .home-apps a {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+
+@media (max-width: 462px) {
+    .home-content h1 {
+        font-size: 5.3rem;
+    }
+
+    .education {
+        padding: 10rem 4% 5rem 5%;
+    }
+    .contact-section form .input-box .input-field {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        margin-top: 2rem;
+        text-align: center;
+
+    }
+
+}
+
+@media (max-width: 462px) {
+    .home {
+        justify-content: center;
+    }
+
+    .home-content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-content h1 {
+        font-size: 6.5rem;
+    }
+}
+
+/*KEYFREAMES ANIMATION*/
+
+@keyframes homeBgText {
+    0%,10%,100% {
+        background-position: -33rem 0;
+    }
+
+    60%,80% {
+        background-position: 0 0;
+    }
+}
+@keyframes homeCursorText {
+    0%,10%,100% {
+        width: 0;
+    }
+
+    60%,78%,80% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    75%,81% {
+        opacity: 0;
+    }
+
+}
+
+@keyframes aboutSpin {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/*Progress bars*/
+
+@keyframes progress {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    60%,78%,80% {
+        width: 84%;
+        opacity: 1;
+    }  
+}
+@keyframes progress2 {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    60%,78%,80% {
+        width: 77%;
+        opacity: 1;
+    }  
+}
+@keyframes progress3 {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    60%,78%,80% {
+        width: 61%;
+        opacity: 1;
+    } 
+}
+@keyframes progress4 {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    60%,78%,80% {
+        width: 67%;
+        opacity: 1;
+    } 
+}
+@keyframes progress5 {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    60%,78%,80% {
+        width: 53%;
+        opacity: 1;
+    } 
+}
+@keyframes progress6 {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    60%,78%,80% {
+        width: 70%;
+        opacity: 1;
+    }  
+}
+@keyframes progress7 {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    60%,78%,80% {
+        width: 88%;
+        opacity: 1;
+    }  
+}
+@keyframes progress8 {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    60%,78%,80% {
+        width: 61%;
+        opacity: 1;
+    }  
+}
+@keyframes progress9 {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    60%,78%,80% {
+        width: 72%;
+        opacity: 1;
+    }  
+}
+
+
+/*I'm going to make the page information appear in transition*/
+
+@keyframes showRight{
+    100% {
+        width: 0;
+    }
+}
